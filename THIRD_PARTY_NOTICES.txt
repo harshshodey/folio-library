@@ -1,0 +1,17 @@
+Third-party material
+
+Folio's original code and documentation are MIT licensed; see LICENSE.
+
+Literary excerpts in dist/passages.js are reproduced from historical works by
+Lewis Carroll, Jane Austen, Oscar Wilde, Henry David Thoreau, Mark Twain, and
+Robert Louis Stevenson. These are public-domain works, not newly authored
+Folio text. Author, work, location, source URL, and editorial context are
+provided in the app and SOURCES.txt. No ownership of these works is claimed.
+
+DM Sans and Manrope are requested from Google Fonts at runtime. Font files
+are not distributed in this repository. They have their own licenses; see
+https://github.com/google/fonts/tree/main/ofl/dmsans and
+https://github.com/google/fonts/tree/main/ofl/manrope .
+
+Book titles and author names identify the sample catalog. The cover mockups
+are CSS illustrations, not scans of commercially published book covers.

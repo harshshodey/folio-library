@@ -1,0 +1,54 @@
+FOLIO QUALITY AUDIT — 20 November 2026
+
+Three verification passes
+
+1. Source and domain audit
+   Found and fixed: demo dates regenerated before the first edit; incomplete
+   member imports; impossible calendar dates; duplicate imported emails and
+   active loans; copy limits; stale-tab overwrites; silent replacement of
+   damaged saved data; inaccessible mobile Settings and Insights.
+
+2. Interactive browser verification
+   Added a fictional book and member, edited both, issued the book to the
+   member, searched lending records, renewed the loan, returned it, and
+   verified the return after reload. Exported an actual JSON file and restored
+   it through the file picker. An invalid backup was rejected without replacing
+   the workspace. Catalog category filters and A–Z sorting worked.
+
+3. Regression, responsive, and accessibility verification
+   The web regression suite passed all 13 tests, including storage failure
+   rollback, conflicting tabs, corrupt data preservation, empty workspaces,
+   invalid backups, copy availability, editing safeguards, and renewal.
+   The C++ engine compiled with -Wall -Wextra -Wpedantic and its expanded
+   self-test passed, including renewal, loaded duplicate emails, copy limits,
+   backups, blank/corrupt file rows, and save-failure rollback.
+   Browser layouts checked at the normal desktop viewport, 390px and 320px.
+   At 320px the page had no horizontal document overflow. All six mobile
+   sections were visible. Keyboard skip navigation focused main without
+   changing the active page. No browser warning/error logs were observed.
+
+Usability improvements
+   - Edit book titles, authors, categories, and total copies.
+   - Edit member names and emails while retaining loan history.
+   - Renew active loans with a clear date confirmation.
+   - Search loans by title or borrower; sort the catalog by title or author.
+   - Reach Settings and Insights on mobile, with named navigation links.
+   - Stronger backup validation and an original-data recovery download.
+   - Preserve first-visit demo dates; synchronize validated cross-tab changes.
+   - Clearer action names, form focus, reduced motion, and larger record text.
+
+Reproduce
+   node --test tests/web.test.cjs
+   g++ -std=c++17 -Wall -Wextra -Wpedantic cpp/main.cpp -o folio
+   ./folio --self-test
+
+Scope and limits
+   These checks provide evidence for the listed scenarios, not a guarantee
+   that software can never fail. Web records remain local to a browser origin.
+   Browser storage does not provide database-grade concurrent transactions.
+   The C++ terminal engine remains a separate application and storage format.
+   Production authentication, shared server storage, multi-user load testing,
+   and testing across every browser/assistive technology are outside this demo.
+
+LITERARY UPDATE — 21 November 2026
+16 regression tests passed, including quotation provenance, filter-aware available-book discovery, and availability-cache invalidation. Browser checks verified source details, quotation cycling, the full literary collection, surprise-book discovery, empty-result recovery, and preservation of partially entered form data while viewing a source. Desktop and 390px mobile layouts were inspected, with no horizontal document overflow on the tested mobile overview. No browser warning/error logs were observed. Original source passages were browsed before insertion.

@@ -1,0 +1,16 @@
+node_modules/
+build/
+*.exe
+*.o
+*.obj
+*.db
+*.db.*
+*.bak
+*.tmp
+.env
+.env.*
+!.env.example
+.openai/
+.sites/
+.DS_Store
+Thumbs.db

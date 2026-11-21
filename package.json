@@ -1,0 +1,14 @@
+{
+  "name": "folio-library",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A thoughtful library workspace with a C++17 domain engine and sourced literary discoveries.",
+  "license": "MIT",
+  "scripts": {
+    "start": "node tools/serve.cjs",
+    "test": "node --test tests/web.test.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
